@@ -19,3 +19,9 @@ def printjobschedule(jobs):
     earliest_deadline = {job[0]: job[1] for job in jobs}
     time_required = {job[0]: job[1] for job in jobs}
 
+    
+    # Schedule jobs in the order of their deadlines
+    schedule = []
+    for _ in range(len(jobs)):
+        # Find the job with the earliest deadline that has all dependencies scheduled
+        job = None
