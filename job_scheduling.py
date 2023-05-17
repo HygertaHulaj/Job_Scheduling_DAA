@@ -13,3 +13,9 @@ def printjobschedule(jobs):
 
     # Sort jobs by their deadlines in increasing order
     jobs = sorted(jobs, key=lambda x: x[1])
+   
+    
+    # Keep track of the earliest deadline and the time required to complete each job
+    earliest_deadline = {job[0]: job[1] for job in jobs}
+    time_required = {job[0]: job[1] for job in jobs}
+
