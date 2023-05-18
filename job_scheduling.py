@@ -25,3 +25,5 @@ def printjobschedule(jobs):
     for _ in range(len(jobs)):
         # Find the job with the earliest deadline that has all dependencies scheduled
         job = None
+        for j in jobs:
+            if j[0] not in schedule and all(dependency in schedule for dependency in graph[j[0]]):
