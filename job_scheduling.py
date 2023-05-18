@@ -27,3 +27,5 @@ def printjobschedule(jobs):
         job = None
         for j in jobs:
             if j[0] not in schedule and all(dependency in schedule for dependency in graph[j[0]]):
+                if job is None or earliest_deadline[j[0]] < earliest_deadline[job]:
+                    job = j[0]
