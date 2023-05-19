@@ -33,3 +33,17 @@ def printjobschedule(jobs):
         for successor in graph[job]:
             earliest_deadline[successor] = min(earliest_deadline[successor], earliest_deadline[job] - time_required[job])
         time_required.pop(job)
+ 
+
+    # Print the schedule
+    print(schedule)
+
+
+    # Driver
+    jobs = []
+
+     n = int(input("Enter the number of jobs: "))
+     for i in range(n):
+
+
+
