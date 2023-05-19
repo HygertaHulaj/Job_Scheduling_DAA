@@ -45,5 +45,13 @@ def printjobschedule(jobs):
      n = int(input("Enter the number of jobs: "))
      for i in range(n):
 
+        
+        job_name = input(f"Enter the name of job {i+1}: ")
+    job_time = int(input(f"Enter the time required for job {i+1}: "))
+    dependency = input(f"Enter the dependency for job {i+1} (leave empty if none): ")
+    jobs.append((job_name, job_time, dependency))
+
+print("Minimum time to complete all jobs is achieved by the following schedule:")
+printjobschedule(jobs)
 
 
