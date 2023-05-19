@@ -29,3 +29,7 @@ def printjobschedule(jobs):
             if j[0] not in schedule and all(dependency in schedule for dependency in graph[j[0]]):
                 if job is None or earliest_deadline[j[0]] < earliest_deadline[job]:
                     job = j[0]
+                    schedule.append(job)
+        for successor in graph[job]:
+            earliest_deadline[successor] = min(earliest_deadline[successor], earliest_deadline[job] - time_required[job])
+        time_required.pop(job)
